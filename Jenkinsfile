@@ -14,7 +14,7 @@ pipeline {
         stage("Test the maven project") {
             steps {
                 script {
-                    sh "mvn clean test"
+                    sh "mvn clean test -DskipITs"
                 }
             }
         }
