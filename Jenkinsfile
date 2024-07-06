@@ -12,8 +12,10 @@ pipeline {
         }
 
         stage("Test the maven project") {
-            script {
-                sh "mvn clean test"
+            steps {
+                script {
+                    sh "mvn clean test"
+                }
             }
         }
     }
