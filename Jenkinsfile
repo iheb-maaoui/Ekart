@@ -18,5 +18,11 @@ pipeline {
                 }
             }
         }
+
+        stage("Install app to the local maven repo") {
+            steps {
+                sh "mvn install -DskipTests"
+            }
+        }
     }
 }
