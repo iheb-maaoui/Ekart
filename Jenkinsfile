@@ -1,15 +1,13 @@
 pipeline {
     agent any
 
-    options {
-        cleanWs()
-    }
-
     stages {
-        stage("Checkout from SCM") {
+        stage("Verify checkout") {
             steps {
                 echo "Checking out from the SCM"
-                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-username-password', url: 'https://github.com/iheb-maaoui/Ekart.git']])
+                script {
+                    sh "ls -al"
+                }
             }
         }
     }
