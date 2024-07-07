@@ -9,5 +9,11 @@ pipeline {
                 printBuildNumber("test1", "test2")
             }
         }
+
+        stage("Say hello") {
+            steps {
+                echoHello()
+            }
+        }
     }
 }
