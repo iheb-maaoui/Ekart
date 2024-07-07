@@ -11,6 +11,12 @@ pipeline {
             }
         }
 
+        stage("Compile") {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
         stage("Test the maven project") {
             steps {
                 script {
@@ -22,6 +28,12 @@ pipeline {
         stage("Install app to the local maven repo") {
             steps {
                 sh "mvn install -DskipTests"
+            }
+        }
+
+        stage("Archive Artifacts") {
+            steps {
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar', followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
