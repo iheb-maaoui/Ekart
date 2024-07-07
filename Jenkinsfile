@@ -12,7 +12,7 @@ pipeline {
 
         stage("Say hello") {
             steps {
-                echoHello()
+                echoHello(name: "echo.sh")
             }
         }
     }
