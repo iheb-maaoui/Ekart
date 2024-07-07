@@ -9,5 +9,5 @@ pipeline {
                 printBuildNumber("test1", "test2")
             }
         }
-        
+    }
 }
