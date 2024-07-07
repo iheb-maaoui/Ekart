@@ -48,5 +48,11 @@ pipeline {
                 junit '**/surefire-reports/**/*.xml'
             }
         }
+
+        stage('Confirm Deploy to Staging') {
+              steps {
+               input(message: 'Deploy to Stage', ok: 'Yes')
+            }
+        }
     }
 }
