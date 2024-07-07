@@ -36,5 +36,11 @@ pipeline {
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar', followSymlinks: false, onlyIfSuccessful: true
             }
         }
+
+        stage("Uploading tests results") {
+            steps {
+                junit '**/surefire-reports/**/*.xml'
+            }
+        }
     }
 }
