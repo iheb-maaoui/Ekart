@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-    environment {
-        BUILD_NUMBER = "$BUILD_NUMBER"
-    }
-
     stages {
 
         stage("Print the build number") {
