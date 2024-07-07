@@ -1,7 +1,18 @@
 pipeline {
     agent any
 
+    environment {
+        BUILD_NUMBER = $BUILD_NUMBER
+    }
+
     stages {
+
+        stage("Print the build number") {
+            steps {
+                echo "Build number: ${BUILD_NUMBER}"
+            }
+        }
+        
         stage("Verify checkout") {
             steps {
                 echo "Checking out from the SCM"
