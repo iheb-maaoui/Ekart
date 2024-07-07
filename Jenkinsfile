@@ -1,3 +1,5 @@
+@Library('custom-pipeline') _
+
 pipeline {
     agent any
     stages {
