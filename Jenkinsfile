@@ -1,8 +1,4 @@
-@Library('custom-pipeline') _
+@Library('javapipeline') _
 
-continuousJavaProject(
-    allowEmptyArchive: true,
-    artifacts: "target/*.jar",
-    followSymlinks: false,
-    onlyIfSuccessful: true,
+continuousJavaPipeline(
 )
